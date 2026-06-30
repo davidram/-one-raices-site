@@ -20,20 +20,20 @@
     --text: #1a1a2e;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: var(--bg); }
+  html { background: var(--bg); }
   body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: var(--text);
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    transition: background .3s, color .3s;
+    transition: color .3s;
     position: relative;
   }
 
   /* Florida beach animated background */
   .beach-bg {
-    position: fixed; inset: 0; z-index: -1; overflow: hidden;
+    position: fixed; inset: 0; z-index: 0; overflow: hidden;
     background: linear-gradient(to bottom, #aee3f5 0%, #cdeef8 28%, #f6f1e3 55%, #f6f1e3 100%);
   }
   .beach-bg svg { position: absolute; bottom: 0; left: 0; width: 100%; }
@@ -73,7 +73,7 @@
   @media (prefers-reduced-motion: reduce) {
     .wave-far, .wave-mid, .wave-near, .sun-glow { animation: none; }
   }
-  .page-wrap { width: 100%; max-width: 480px; min-height: 100vh; position: relative; padding-bottom: 90px; }
+  .page-wrap { width: 100%; max-width: 480px; min-height: 100vh; position: relative; padding-bottom: 90px; z-index: 1; }
 
   /* Language toggle */
   .lang-toggle {
