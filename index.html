@@ -31,47 +31,24 @@
     position: relative;
   }
 
-  /* Florida beach animated background */
+  /* Florida beach photo background */
   .beach-bg {
     position: fixed; inset: 0; z-index: 0; overflow: hidden;
-    background: linear-gradient(to bottom, #aee3f5 0%, #cdeef8 28%, #f6f1e3 55%, #f6f1e3 100%);
   }
-  .beach-bg svg { position: absolute; bottom: 0; left: 0; width: 100%; }
-  .wave-far {
-    height: 38%; opacity: .55;
-    animation: waveDriftSlow 14s ease-in-out infinite;
+  .beach-bg img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 65%;
+    animation: slowZoom 30s ease-in-out infinite alternate;
   }
-  .wave-mid {
-    height: 30%; opacity: .7;
-    animation: waveDrift 9s ease-in-out infinite;
+  .beach-bg::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,.55) 0%, rgba(255,255,255,.35) 30%, rgba(248,246,240,.92) 62%, var(--bg) 78%);
   }
-  .wave-near {
-    height: 22%; opacity: .9;
-    animation: waveDriftFast 6.5s ease-in-out infinite;
-  }
-  .sun-glow {
-    position: absolute; top: 6%; right: 12%; width: 140px; height: 140px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,250,225,.9), rgba(255,250,225,0) 70%);
-    animation: glowPulse 6s ease-in-out infinite;
-  }
-  @keyframes waveDrift {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(-2.5%) translateY(4px); }
-  }
-  @keyframes waveDriftSlow {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-1.8%); }
-  }
-  @keyframes waveDriftFast {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(-3.5%) translateY(-3px); }
-  }
-  @keyframes glowPulse {
-    0%, 100% { opacity: .7; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.08); }
+  @keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .wave-far, .wave-mid, .wave-near, .sun-glow { animation: none; }
+    .beach-bg img { animation: none; }
   }
   .page-wrap { width: 100%; max-width: 480px; min-height: 100vh; position: relative; padding-bottom: 90px; z-index: 1; }
 
@@ -146,16 +123,7 @@
 
 <!-- Florida beach animated background -->
 <div class="beach-bg" aria-hidden="true">
-  <div class="sun-glow"></div>
-  <svg class="wave-far" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,100 C240,160 480,40 720,100 C960,160 1200,40 1440,100 L1440,200 L0,200 Z" fill="#8fd4ea"></path>
-  </svg>
-  <svg class="wave-mid" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,120 C220,60 480,160 720,110 C960,60 1220,150 1440,90 L1440,200 L0,200 Z" fill="#5fc2e0"></path>
-  </svg>
-  <svg class="wave-near" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,90 C200,140 460,40 720,90 C980,140 1240,50 1440,100 L1440,200 L0,200 Z" fill="#2fa9d6"></path>
-  </svg>
+  <img src="beach-bg.jpg" alt="">
 </div>
 
 <div class="page-wrap">
