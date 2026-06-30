@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyer Guide | One Raices</title>
+<meta name="description" content="A step-by-step home buying guide from One Raices.">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="topbar">
+    <a class="back-link" href="index.html">&larr; <span data-i18n="back">Back</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button class="lang-opt" id="lang-en" onclick="setLang('en')">EN</button>
+      <button class="lang-opt" id="lang-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <img class="logo-sm" src="logo.png" alt="One Raices logo">
+    <h1 data-i18n="title">The Buyer's Guide</h1>
+    <p data-i18n="subtitle">Everything you need to know before buying your next home, step by step.</p>
+  </div>
+
+  <div class="content">
+    <!-- EDIT ME: rewrite any of these sections with your own process, local tips, or lender recommendations -->
+    <div class="guide-section">
+      <h2><span class="num">1</span> <span data-i18n="s1_title">Get pre-approved first</span></h2>
+      <p data-i18n="s1_body">Before you fall in love with a home, talk to a lender. A pre-approval letter tells you your real budget and makes your offer far more competitive when you find the right place.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">2</span> <span data-i18n="s2_title">Define your must-haves vs. nice-to-haves</span></h2>
+      <p data-i18n="s2_body">List your non-negotiables (location, number of bedrooms, school district) separately from things you'd like but could live without. This keeps your search focused and your decisions fast.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">3</span> <span data-i18n="s3_title">Tour with a critical eye</span></h2>
+      <p data-i18n="s3_body">Look past staging — check water pressure, open and close windows, look at the roof age, and ask about the neighborhood at different times of day if you can.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">4</span> <span data-i18n="s4_title">Make a strong, smart offer</span></h2>
+      <p data-i18n="s4_body">We'll pull comparable sales so your offer is competitive without overpaying, and help you decide which contingencies matter most to keep versus which you can safely waive.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">5</span> <span data-i18n="s5_title">Inspection &amp; closing</span></h2>
+      <p data-i18n="s5_body">A home inspection protects you from costly surprises. We'll walk you through negotiating repairs, finalizing your loan, and what to expect on closing day.</p>
+    </div>
+
+    <div class="guide-cta">
+      <p data-i18n="cta_text">Ready to start house hunting? Let's talk about exactly what you're looking for.</p>
+      <a class="btn-primary" href="contact.html" data-i18n="cta_btn">Book a Free Consultation</a>
+    </div>
+  </div>
+
+  <div class="footer-note" data-i18n="footer">Powered by One Raices</div>
+</div>
+
+<script src="lang.js"></script>
+<script>
+const PAGE_I18N = {
+  en: {
+    back: "Back",
+    title: "The Buyer's Guide",
+    subtitle: "Everything you need to know before buying your next home, step by step.",
+    s1_title: "Get pre-approved first",
+    s1_body: "Before you fall in love with a home, talk to a lender. A pre-approval letter tells you your real budget and makes your offer far more competitive when you find the right place.",
+    s2_title: "Define your must-haves vs. nice-to-haves",
+    s2_body: "List your non-negotiables (location, number of bedrooms, school district) separately from things you'd like but could live without. This keeps your search focused and your decisions fast.",
+    s3_title: "Tour with a critical eye",
+    s3_body: "Look past staging — check water pressure, open and close windows, look at the roof age, and ask about the neighborhood at different times of day if you can.",
+    s4_title: "Make a strong, smart offer",
+    s4_body: "We'll pull comparable sales so your offer is competitive without overpaying, and help you decide which contingencies matter most to keep versus which you can safely waive.",
+    s5_title: "Inspection & closing",
+    s5_body: "A home inspection protects you from costly surprises. We'll walk you through negotiating repairs, finalizing your loan, and what to expect on closing day.",
+    cta_text: "Ready to start house hunting? Let's talk about exactly what you're looking for.",
+    cta_btn: "Book a Free Consultation",
+    footer: "Powered by One Raices"
+  },
+  es: {
+    back: "Atrás",
+    title: "Guía para Compradores",
+    subtitle: "Todo lo que necesitas saber antes de comprar tu próxima casa, paso a paso.",
+    s1_title: "Primero, obtén la pre-aprobación",
+    s1_body: "Antes de enamorarte de una casa, habla con un prestamista. Una carta de pre-aprobación te muestra tu presupuesto real y hace tu oferta mucho más competitiva cuando encuentres el lugar ideal.",
+    s2_title: "Define lo esencial vs. lo deseable",
+    s2_body: "Haz una lista de lo que no es negociable (ubicación, número de recámaras, zona escolar) por separado de lo que te gustaría pero no es indispensable. Esto agiliza tu búsqueda y tus decisiones.",
+    s3_title: "Visita con ojo crítico",
+    s3_body: "Mira más allá de la decoración — revisa la presión del agua, abre y cierra ventanas, fíjate en la edad del techo, y si puedes, pregunta cómo es el vecindario en distintos horarios del día.",
+    s4_title: "Haz una oferta inteligente y competitiva",
+    s4_body: "Te ayudamos a revisar ventas comparables para que tu oferta sea competitiva sin pagar de más, y a decidir qué contingencias conviene mantener y cuáles puedes omitir con seguridad.",
+    s5_title: "Inspección y cierre",
+    s5_body: "Una inspección protege tu inversión de sorpresas costosas. Te guiamos en la negociación de reparaciones, la finalización de tu préstamo, y qué esperar el día del cierre.",
+    cta_text: "¿Listo/a para empezar a buscar casa? Hablemos de exactamente qué estás buscando.",
+    cta_btn: "Reservar Consulta Gratuita",
+    footer: "Desarrollado por One Raices"
+  }
+};
+initLang(PAGE_I18N);
+</script>
+
+</body>
+</html>

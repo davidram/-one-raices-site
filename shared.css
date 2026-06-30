@@ -1,0 +1,95 @@
+/* ============================================================
+   One Raices — shared styles for all sub-pages
+   (contact, listings, buyer-guide, seller-guide, renter-guide)
+============================================================ */
+:root {
+  --banner: #1a1a2e;
+  --btn: #C9A96E;
+  --ring: #C9A96E;
+  --bg: #f8f6f0;
+  --text: #1a1a2e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+.page-wrap { max-width: 640px; margin: 0 auto; min-height: 100vh; padding-bottom: 60px; }
+
+/* Top bar with back link + language toggle */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--banner); padding: 16px 20px; position: sticky; top: 0; z-index: 20;
+}
+.back-link {
+  color: #fff; text-decoration: none; font-size: 14px; font-weight: 600;
+  display: flex; align-items: center; gap: 6px;
+}
+.lang-toggle {
+  display: flex; background: rgba(255,255,255,.15); border-radius: 999px; padding: 3px; gap: 2px;
+}
+.lang-opt { padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: transparent; color: #fff; opacity: .65; }
+.lang-opt.active { background: #fff; color: var(--banner); opacity: 1; }
+
+.hero { padding: 28px 20px 16px; text-align: center; }
+.hero img.logo-sm { width: 64px; height: 64px; object-fit: contain; margin-bottom: 10px; }
+.hero h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.hero p { font-size: 13.5px; opacity: .7; max-width: 440px; margin: 0 auto; line-height: 1.5; }
+
+.content { padding: 8px 20px 20px; }
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--btn); color: #fff; font-weight: 600; font-size: 14px;
+  padding: 13px 22px; border-radius: 999px; border: none; cursor: pointer; text-decoration: none;
+  transition: transform .12s, opacity .12s; width: 100%;
+}
+.btn-primary:hover { transform: translateY(-1px); opacity: .92; }
+.btn-whatsapp { background: #25D366; }
+
+/* Form */
+.form-card { background: #fff; border-radius: 16px; padding: 22px; box-shadow: 0 2px 14px rgba(0,0,0,.06); margin-top: 6px; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 5px; opacity: .8; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 11px 13px; border-radius: 10px; border: 1.5px solid #e3e0d8;
+  font-size: 14px; font-family: inherit; color: var(--text); background: #fafaf8;
+}
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--btn);
+}
+.form-success {
+  display: none; background: #E1F5EE; color: #0F6E56; padding: 14px 16px; border-radius: 12px;
+  font-size: 13.5px; margin-top: 14px; text-align: center;
+}
+
+/* Listing cards */
+.listing-grid { display: flex; flex-direction: column; gap: 16px; }
+.listing-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 14px rgba(0,0,0,.06); }
+.listing-img { height: 170px; background: linear-gradient(135deg, var(--banner), #2d2d50); display: flex; align-items: center; justify-content: center; position: relative; }
+.listing-img svg { width: 48px; height: 48px; fill: rgba(255,255,255,.35); }
+.listing-badge { position: absolute; top: 10px; left: 10px; background: var(--btn); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.listing-body { padding: 14px 16px; }
+.listing-price { font-size: 19px; font-weight: 700; color: var(--banner); }
+.listing-addr { font-size: 13px; opacity: .7; margin-top: 2px; }
+.listing-meta { display: flex; gap: 14px; margin-top: 10px; font-size: 12.5px; opacity: .75; }
+.listing-meta span { display: flex; align-items: center; gap: 4px; }
+.listing-cta { margin-top: 12px; display: flex; gap: 8px; }
+.listing-cta a { flex: 1; text-align: center; font-size: 13px; padding: 9px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+.listing-cta .ask { background: var(--bg); color: var(--text); border: 1.5px solid #e3e0d8; }
+.listing-cta .wa { background: #25D366; color: #fff; }
+.listing-note { text-align: center; font-size: 12px; opacity: .55; margin-top: 18px; padding: 0 10px; line-height: 1.5; }
+
+/* Guide pages */
+.guide-section { margin-bottom: 22px; }
+.guide-section h2 { font-size: 16px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.guide-section h2 .num { width: 24px; height: 24px; border-radius: 50%; background: var(--btn); color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.guide-section p { font-size: 13.5px; line-height: 1.65; opacity: .8; }
+.guide-cta { margin-top: 26px; background: var(--banner); border-radius: 16px; padding: 22px; text-align: center; }
+.guide-cta p { color: #fff; font-size: 14px; margin-bottom: 14px; opacity: .9; }
+
+.footer-note { text-align: center; font-size: 11px; opacity: .45; padding: 24px 20px 0; }

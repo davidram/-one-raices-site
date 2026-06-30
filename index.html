@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Raices | Your Real Estate Link</title>
+<meta name="description" content="One Raices — book a consultation, view listings, get buyer/seller guides, and connect on WhatsApp or by phone.">
+
+<!-- ====================================================================
+  EDITING GUIDE — search for "EDIT ME" comments to find every place
+  you'll want to personalize: phone numbers, links, profile info, colors.
+==================================================================== -->
+
+<style>
+  :root {
+    --banner: #1a1a2e;
+    --btn: #C9A96E;
+    --ring: #C9A96E;
+    --bg: #f8f6f0;
+    --text: #1a1a2e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    transition: background .3s, color .3s;
+  }
+  .page-wrap { width: 100%; max-width: 480px; min-height: 100vh; position: relative; padding-bottom: 90px; }
+
+  /* Language toggle */
+  .lang-toggle {
+    position: absolute; top: 14px; right: 14px; z-index: 10;
+    display: flex; background: rgba(255,255,255,.85); border-radius: 999px; padding: 3px; gap: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  }
+  .lang-opt { padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: transparent; color: #555; }
+  .lang-opt.active { background: var(--banner); color: #fff; }
+
+  /* Banner + profile */
+  .banner { height: 110px; background: var(--banner); position: relative; }
+  .profile-block { display: flex; flex-direction: column; align-items: center; margin-top: -48px; padding: 0 20px 16px; }
+  .avatar {
+    width: 100px; height: 100px; border-radius: 50%; border: 4px solid var(--ring);
+    background: #ffffff; display: flex; align-items: center; justify-content: center;
+    font-size: 30px; font-weight: 600; color: var(--text); overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  }
+  .avatar img { width: 78%; height: 78%; object-fit: contain; }
+  .profile-name { font-size: 20px; font-weight: 700; margin-top: 12px; text-align: center; }
+  .profile-tagline { font-size: 13px; opacity: .75; margin-top: 4px; text-align: center; }
+  .profile-bio { font-size: 12.5px; opacity: .65; margin-top: 8px; text-align: center; max-width: 320px; line-height: 1.5; }
+
+  /* Contact bar (WhatsApp + Call) */
+  .contact-bar { display: flex; gap: 8px; padding: 4px 20px 4px; }
+  .contact-btn {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 11px 14px; border-radius: 999px; color: #fff; font-size: 13px; font-weight: 600;
+    text-decoration: none; transition: transform .12s, opacity .12s;
+  }
+  .contact-btn:hover { transform: translateY(-1px); opacity: .92; }
+  .contact-btn.whatsapp { background: #25D366; box-shadow: 0 3px 10px rgba(37,211,102,.35); }
+  .contact-btn.call { background: var(--btn); box-shadow: 0 3px 10px rgba(0,0,0,.12); }
+  .contact-btn svg { width: 17px; height: 17px; fill: #fff; }
+
+  /* Links */
+  .links-section { padding: 14px 20px 6px; display: flex; flex-direction: column; gap: 10px; }
+  .link-btn {
+    display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px;
+    background: var(--btn); color: #fff; text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: transform .12s, opacity .12s; border: none; cursor: pointer; width: 100%; text-align: left;
+  }
+  .link-btn:hover { transform: translateY(-1px); opacity: .92; }
+  .link-btn svg { width: 18px; height: 18px; fill: #fff; flex-shrink: 0; }
+  .link-btn .arrow { margin-left: auto; opacity: .7; }
+
+  /* Socials */
+  .social-row { display: flex; justify-content: center; gap: 16px; padding: 18px 0 8px; }
+  .social-icon {
+    width: 38px; height: 38px; border-radius: 50%; background: var(--banner);
+    display: flex; align-items: center; justify-content: center; text-decoration: none;
+  }
+  .social-icon svg { width: 18px; height: 18px; fill: #fff; }
+
+  .footer-note { text-align: center; font-size: 11px; opacity: .45; padding: 16px 20px 0; }
+
+  @media (max-width: 360px) {
+    .profile-name { font-size: 18px; }
+    .link-btn { font-size: 13px; padding: 12px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- Language toggle -->
+  <div class="lang-toggle" role="group" aria-label="Language selector">
+    <button class="lang-opt" id="lang-en" onclick="setLang('en')">EN</button>
+    <button class="lang-opt" id="lang-es" onclick="setLang('es')">ES</button>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <!-- EDIT ME: replace with a background image of a home/property if desired -->
+    <!-- <img src="your-banner-image.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
+  </div>
+
+  <!-- Profile -->
+  <div class="profile-block">
+    <div class="avatar" id="avatar">
+      <img src="logo.png" alt="One Raices logo">
+    </div>
+    <div class="profile-name" id="profile-name">One Raices</div>
+    <div class="profile-bio" data-i18n="bio">Helping families find their dream homes. Buyer, seller & renter guides. DM me anytime.</div>
+  </div>
+
+  <!-- WhatsApp + Call -->
+  <div class="contact-bar">
+    <!-- EDIT ME: replace 11234567890 with your real WhatsApp number, country code + number, no spaces or symbols -->
+    <a class="contact-btn whatsapp" id="wa-link" href="https://wa.me/11234567890?text=Hi!%20I%20found%20you%20on%20Instagram%20and%20I%27m%20interested%20in%20buying%2Fselling%20a%20home.%20Can%20we%20connect%3F" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.5 4 3.78 7.72 3.78 12.27c0 1.6.47 3.16 1.36 4.49L4 21l4.4-1.15a8.8 8.8 0 0 0 3.65.83c4.55 0 8.27-3.72 8.27-8.27a8.85 8.85 0 0 0-2.72-6.09zM12.05 19.4a7.1 7.1 0 0 1-3.63-1l-.26-.16-2.6.68.7-2.54-.17-.27a7.1 7.1 0 0 1-1.1-3.85 7.13 7.13 0 0 1 7.13-7.13 7.07 7.07 0 0 1 5.04 2.1 7.07 7.07 0 0 1 2.08 5.04c0 3.94-3.2 7.13-7.13 7.13zm3.9-5.33c-.21-.1-1.24-.61-1.43-.68-.19-.07-.33-.1-.47.1-.14.21-.54.68-.66.82-.12.14-.24.15-.45.05-.21-.1-.87-.32-1.66-1.02-.61-.55-1.03-1.22-1.15-1.43-.12-.21-.01-.33.1-.43.1-.1.21-.24.32-.36.1-.12.14-.21.21-.35.07-.14.04-.26-.02-.36-.07-.1-.6-1.45-.83-1.99-.22-.53-.44-.45-.6-.46-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.71.31-.25.25-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.13.18 1.85 2.83 4.5 3.85 2.65 1.02 2.65.68 3.13.64.47-.04 1.53-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.07-.1-.21-.16-.42-.26z"/></svg>
+      <span data-i18n="wa_btn">WhatsApp me</span>
+    </a>
+    <!-- EDIT ME: replace +11234567890 with your real call number -->
+    <a class="contact-btn call" id="call-link" href="tel:+11234567890">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.02z"/></svg>
+      <span data-i18n="call_btn">Call now</span>
+    </a>
+  </div>
+
+  <!-- Links -->
+  <!-- EDIT ME: replace href="#" with your real URLs for each button below -->
+  <div class="links-section">
+    <a class="link-btn" href="contact.html">
+      <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14zM5 8V6h14v2z"/></svg>
+      <span data-i18n="link1">Book a Free Consultation</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="link-btn" href="listings.html">
+      <svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>
+      <span data-i18n="link2">View My Listings</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="link-btn" href="contact.html">
+      <svg viewBox="0 0 24 24"><path d="M11.8 1 1 17h4.7L9.5 11h1.1l-2 6h4.7L24 1zM9 23h6v-2H9z"/></svg>
+      <span data-i18n="link3">What's Your Home Worth?</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="link-btn" href="buyer-guide.html">
+      <svg viewBox="0 0 24 24"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM6 4h5v8l-2.5-1.5L6 12z"/></svg>
+      <span data-i18n="link4">Buyer Guide</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="link-btn" href="seller-guide.html">
+      <svg viewBox="0 0 24 24"><path d="M3 5h18v2H3zm0 6h18v2H3zm0 6h18v2H3z"/></svg>
+      <span data-i18n="link5">Seller Guide</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="link-btn" href="renter-guide.html">
+      <svg viewBox="0 0 24 24"><path d="M7 14a3 3 0 1 0 .001-6.001A3 3 0 0 0 7 14zm9-3a4 4 0 1 0 .001-8.001A4 4 0 0 0 16 11zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zM7 16c-2.67 0-8 1.34-8 4v2h7v-2c0-1.07.34-2.07.94-2.94A12 12 0 0 0 7 16z"/></svg>
+      <span data-i18n="link6">Renter Guide</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="link-btn" href="contact.html">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2a4 4 0 1 1 .001-8.001A4 4 0 0 1 12 10z"/></svg>
+      <span data-i18n="link8">About Me / Contact</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <!-- Socials -->
+  <!-- EDIT ME: replace # with your real profile URLs -->
+  <div class="social-row">
+    <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.78.22 2.41.46.65.25 1.2.6 1.74 1.14.53.53.88 1.08 1.13 1.73.24.63.41 1.36.46 2.42C21.99 8.94 22 9.31 22 12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.78-.46 2.41a4.65 4.65 0 0 1-1.13 1.74c-.53.53-1.08.88-1.74 1.13-.63.24-1.36.41-2.41.46-1.06.05-1.43.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.78-.22-2.41-.46a4.65 4.65 0 0 1-1.74-1.13 4.65 4.65 0 0 1-1.13-1.74c-.24-.63-.41-1.36-.46-2.41C2.01 15.06 2 14.69 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.46-2.42a4.65 4.65 0 0 1 1.13-1.73c.53-.54 1.08-.89 1.74-1.14.63-.24 1.36-.41 2.41-.46C8.94 2.01 9.31 2 12 2zm0 1.8c-2.65 0-2.99.01-4.04.06-.96.04-1.48.2-1.83.34-.46.18-.78.39-1.13.74-.34.34-.55.66-.73 1.12-.14.35-.31.87-.35 1.83C3.87 9.01 3.86 9.35 3.86 12s.01 2.99.06 4.04c.04.96.21 1.48.35 1.83.18.46.39.78.73 1.12.35.35.67.56 1.13.74.35.14.87.3 1.83.35 1.05.05 1.39.06 4.04.06s2.99-.01 4.04-.06c.96-.05 1.48-.21 1.83-.35.46-.18.78-.39 1.13-.74.34-.34.55-.66.73-1.12.14-.35.31-.87.35-1.83.05-1.05.06-1.39.06-4.04s-.01-2.99-.06-4.04c-.04-.96-.21-1.48-.35-1.83a3 3 0 0 0-.73-1.12 3 3 0 0 0-1.13-.74c-.35-.14-.87-.3-1.83-.34C14.99 3.81 14.65 3.8 12 3.8zm0 3.05a5.15 5.15 0 1 1 0 10.3 5.15 5.15 0 0 1 0-10.3zm0 1.8a3.35 3.35 0 1 0 0 6.7 3.35 3.35 0 0 0 0-6.7zm5.4-2.8a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+    </a>
+    <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.4 4.4 0 0 1-.32-1.79h-2.9v12.27a2.27 2.27 0 1 1-1.6-2.16V11.1a5.1 5.1 0 1 0 4.42 5.06V9.7a7.3 7.3 0 0 0 4.27 1.37V8.18a4.4 4.4 0 0 1-3.87-2.36z"/></svg>
+    </a>
+    <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24"><path d="M21.58 7.19a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.82.42a2.5 2.5 0 0 0-1.76 1.77C2 8.77 2 12 2 12s0 3.23.42 4.81a2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.82-.42a2.5 2.5 0 0 0 1.76-1.77C22 15.23 22 12 22 12s0-3.23-.42-4.81zM10 15V9l5 3z"/></svg>
+    </a>
+    <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="Twitter/X">
+      <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.3 8.3L23 22h-7.1l-5.5-7-6.3 7H1l7.8-8.9L1.5 2h7.2l5 6.4zm-2.5 18h1.5L7.7 4H6.1z"/></svg>
+    </a>
+  </div>
+
+  <div class="footer-note" data-i18n="footer">Powered by One Raices</div>
+</div>
+
+<script>
+/* ====================================================================
+  TRANSLATIONS — edit the "en" and "es" text below to fully customize.
+==================================================================== */
+const I18N = {
+  en: {
+    tagline: "Your Local Real Estate Expert",
+    bio: "Helping families find their dream homes. Buyer, seller & renter guides. DM me anytime.",
+    wa_btn: "WhatsApp me",
+    call_btn: "Call now",
+    link1: "Book a Free Consultation",
+    link2: "View My Listings",
+    link3: "What's Your Home Worth?",
+    link4: "Buyer Guide",
+    link5: "Seller Guide",
+    link6: "Renter Guide",
+    link8: "About Me / Contact",
+    footer: "Powered by One Raices",
+    waMsg: "Hi! I found you on Instagram and I'm interested in buying/selling a home. Can we connect?"
+  },
+  es: {
+    tagline: "Tu Experta Local en Bienes Raíces",
+    bio: "Ayudando a familias a encontrar el hogar de sus sueños. Guías de compra, venta y renta. Escríbeme cuando quieras.",
+    wa_btn: "Escríbeme por WhatsApp",
+    call_btn: "Llamar ahora",
+    link1: "Reservar Consulta Gratuita",
+    link2: "Ver Mis Propiedades",
+    link3: "¿Cuánto Vale Tu Casa?",
+    link4: "Guía para Compradores",
+    link5: "Guía para Vendedores",
+    link6: "Guía para Inquilinos",
+    link8: "Sobre Mí / Contacto",
+    footer: "Desarrollado por One Raices",
+    waMsg: "¡Hola! Te encontré en Instagram y estoy interesado/a en comprar/vender una casa. ¿Podemos conectar?"
+  }
+};
+
+function setLang(lang) {
+  localStorage.setItem('oneRaicesLang', lang);
+  document.documentElement.lang = lang;
+  document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+  document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (I18N[lang][key]) el.textContent = I18N[lang][key];
+  });
+  // Update WhatsApp pre-filled message in the new language
+  const waLink = document.getElementById('wa-link');
+  const waNumberMatch = waLink.href.match(/wa\.me\/(\d+)/);
+  const waNumber = waNumberMatch ? waNumberMatch[1] : '11234567890';
+  waLink.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(I18N[lang].waMsg)}`;
+}
+
+function detectInitialLang() {
+  const saved = localStorage.getItem('oneRaicesLang');
+  if (saved) return saved;
+  const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  return browserLang.startsWith('es') ? 'es' : 'en';
+}
+
+setLang(detectInitialLang());
+
+/* ====================================================================
+  Optional: basic click tracking via localStorage (no backend needed).
+  Hook this up to Google Analytics / Plausible / Meta Pixel for real
+  analytics — see comment block at bottom of file for instructions.
+==================================================================== */
+document.querySelectorAll('.link-btn, .contact-btn, .social-icon').forEach(el => {
+  el.addEventListener('click', () => {
+    const key = 'oneRaicesClicks';
+    const data = JSON.parse(localStorage.getItem(key) || '{}');
+    const label = el.querySelector('span')?.textContent || el.getAttribute('aria-label') || 'unknown';
+    data[label] = (data[label] || 0) + 1;
+    localStorage.setItem(key, JSON.stringify(data));
+  });
+});
+</script>
+
+<!-- ====================================================================
+  TO ADD REAL ANALYTICS (Google Analytics example):
+  1. Get a GA4 Measurement ID from analytics.google.com
+  2. Paste this in <head>, replacing G-XXXXXXX with your ID:
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+==================================================================== -->
+
+</body>
+</html>

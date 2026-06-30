@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renter Guide | One Raices</title>
+<meta name="description" content="A step-by-step rental guide from One Raices.">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="topbar">
+    <a class="back-link" href="index.html">&larr; <span data-i18n="back">Back</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button class="lang-opt" id="lang-en" onclick="setLang('en')">EN</button>
+      <button class="lang-opt" id="lang-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <img class="logo-sm" src="logo.png" alt="One Raices logo">
+    <h1 data-i18n="title">The Renter's Guide</h1>
+    <p data-i18n="subtitle">Find the right rental, faster — and avoid common renter mistakes.</p>
+  </div>
+
+  <div class="content">
+    <!-- EDIT ME: rewrite any of these sections with your own process or local market tips -->
+    <div class="guide-section">
+      <h2><span class="num">1</span> <span data-i18n="s1_title">Know your real budget</span></h2>
+      <p data-i18n="s1_body">Rent is usually recommended to stay under 30% of your gross income — but also factor in utilities, parking, and any pet fees before you fall in love with a place.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">2</span> <span data-i18n="s2_title">Gather your documents early</span></h2>
+      <p data-i18n="s2_body">Most landlords ask for proof of income, ID, and references. Having these ready lets you move fast on a great rental before someone else does.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">3</span> <span data-i18n="s3_title">Inspect before you sign</span></h2>
+      <p data-i18n="s3_body">Test every faucet and outlet, check for water damage or mold, and take photos of any existing damage on move-in day to protect your deposit.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">4</span> <span data-i18n="s4_title">Read the lease carefully</span></h2>
+      <p data-i18n="s4_body">Pay attention to the lease term, renewal terms, who's responsible for repairs, and the exact deposit return policy before you sign anything.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">5</span> <span data-i18n="s5_title">We can help you search</span></h2>
+      <p data-i18n="s5_body">We know which buildings and landlords are easiest to work with in your target neighborhoods — let us help you skip the dead-end listings.</p>
+    </div>
+
+    <div class="guide-cta">
+      <p data-i18n="cta_text">Tell us what you're looking for and we'll help you find it.</p>
+      <a class="btn-primary" href="contact.html" data-i18n="cta_btn">Start My Rental Search</a>
+    </div>
+  </div>
+
+  <div class="footer-note" data-i18n="footer">Powered by One Raices</div>
+</div>
+
+<script src="lang.js"></script>
+<script>
+const PAGE_I18N = {
+  en: {
+    back: "Back",
+    title: "The Renter's Guide",
+    subtitle: "Find the right rental, faster — and avoid common renter mistakes.",
+    s1_title: "Know your real budget",
+    s1_body: "Rent is usually recommended to stay under 30% of your gross income — but also factor in utilities, parking, and any pet fees before you fall in love with a place.",
+    s2_title: "Gather your documents early",
+    s2_body: "Most landlords ask for proof of income, ID, and references. Having these ready lets you move fast on a great rental before someone else does.",
+    s3_title: "Inspect before you sign",
+    s3_body: "Test every faucet and outlet, check for water damage or mold, and take photos of any existing damage on move-in day to protect your deposit.",
+    s4_title: "Read the lease carefully",
+    s4_body: "Pay attention to the lease term, renewal terms, who's responsible for repairs, and the exact deposit return policy before you sign anything.",
+    s5_title: "We can help you search",
+    s5_body: "We know which buildings and landlords are easiest to work with in your target neighborhoods — let us help you skip the dead-end listings.",
+    cta_text: "Tell us what you're looking for and we'll help you find it.",
+    cta_btn: "Start My Rental Search",
+    footer: "Powered by One Raices"
+  },
+  es: {
+    back: "Atrás",
+    title: "Guía para Inquilinos",
+    subtitle: "Encuentra la renta correcta, más rápido — y evita errores comunes.",
+    s1_title: "Conoce tu presupuesto real",
+    s1_body: "Se recomienda que la renta no supere el 30% de tu ingreso bruto — pero también considera servicios, estacionamiento y cargos por mascotas antes de enamorarte de un lugar.",
+    s2_title: "Reúne tus documentos con anticipación",
+    s2_body: "La mayoría de los arrendadores piden comprobante de ingresos, identificación y referencias. Tenerlos listos te permite actuar rápido en una buena renta antes que otra persona.",
+    s3_title: "Inspecciona antes de firmar",
+    s3_body: "Prueba cada llave de agua y contacto eléctrico, revisa si hay daños por agua o moho, y toma fotos de cualquier daño existente el día de la mudanza para proteger tu depósito.",
+    s4_title: "Lee el contrato con cuidado",
+    s4_body: "Presta atención a la duración del contrato, los términos de renovación, quién es responsable de las reparaciones, y la política exacta de devolución del depósito antes de firmar.",
+    s5_title: "Podemos ayudarte a buscar",
+    s5_body: "Sabemos qué edificios y arrendadores son más fáciles de tratar en las zonas que te interesan — déjanos ayudarte a evitar las propiedades que no llevan a nada.",
+    cta_text: "Dinos qué estás buscando y te ayudamos a encontrarlo.",
+    cta_btn: "Comenzar Mi Búsqueda de Renta",
+    footer: "Desarrollado por One Raices"
+  }
+};
+initLang(PAGE_I18N);
+</script>
+
+</body>
+</html>

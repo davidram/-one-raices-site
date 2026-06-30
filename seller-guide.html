@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller Guide | One Raices</title>
+<meta name="description" content="A step-by-step home selling guide from One Raices.">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="topbar">
+    <a class="back-link" href="index.html">&larr; <span data-i18n="back">Back</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button class="lang-opt" id="lang-en" onclick="setLang('en')">EN</button>
+      <button class="lang-opt" id="lang-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <img class="logo-sm" src="logo.png" alt="One Raices logo">
+    <h1 data-i18n="title">The Seller's Guide</h1>
+    <p data-i18n="subtitle">How to price, prep, and sell your home for the most money in the least time.</p>
+  </div>
+
+  <div class="content">
+    <!-- EDIT ME: rewrite any of these sections with your own process or local market tips -->
+    <div class="guide-section">
+      <h2><span class="num">1</span> <span data-i18n="s1_title">Get a real pricing strategy</span></h2>
+      <p data-i18n="s1_body">We'll run a comparative market analysis using recent, truly comparable sales nearby — not just an automated estimate — so your home is priced to sell fast and for top dollar.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">2</span> <span data-i18n="s2_title">Prep that actually pays off</span></h2>
+      <p data-i18n="s2_body">Not every renovation is worth it. We'll tell you which quick fixes (decluttering, a fresh coat of paint, curb appeal) give the best return, and which upgrades to skip.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">3</span> <span data-i18n="s3_title">Professional photos &amp; marketing</span></h2>
+      <p data-i18n="s3_body">Your listing gets professional photography, a compelling description, and exposure across MLS, social media, and our buyer network from day one.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">4</span> <span data-i18n="s4_title">Showings &amp; offers</span></h2>
+      <p data-i18n="s4_body">We coordinate every showing around your schedule and walk you through every offer that comes in — price, terms, contingencies — so you know exactly what you're accepting.</p>
+    </div>
+    <div class="guide-section">
+      <h2><span class="num">5</span> <span data-i18n="s5_title">Inspection negotiations &amp; closing</span></h2>
+      <p data-i18n="s5_body">We help you respond to inspection requests strategically and guide you through every document until the keys change hands.</p>
+    </div>
+
+    <div class="guide-cta">
+      <p data-i18n="cta_text">Curious what your home could sell for in today's market?</p>
+      <a class="btn-primary" href="contact.html" data-i18n="cta_btn">Get My Free Home Valuation</a>
+    </div>
+  </div>
+
+  <div class="footer-note" data-i18n="footer">Powered by One Raices</div>
+</div>
+
+<script src="lang.js"></script>
+<script>
+const PAGE_I18N = {
+  en: {
+    back: "Back",
+    title: "The Seller's Guide",
+    subtitle: "How to price, prep, and sell your home for the most money in the least time.",
+    s1_title: "Get a real pricing strategy",
+    s1_body: "We'll run a comparative market analysis using recent, truly comparable sales nearby — not just an automated estimate — so your home is priced to sell fast and for top dollar.",
+    s2_title: "Prep that actually pays off",
+    s2_body: "Not every renovation is worth it. We'll tell you which quick fixes (decluttering, a fresh coat of paint, curb appeal) give the best return, and which upgrades to skip.",
+    s3_title: "Professional photos & marketing",
+    s3_body: "Your listing gets professional photography, a compelling description, and exposure across MLS, social media, and our buyer network from day one.",
+    s4_title: "Showings & offers",
+    s4_body: "We coordinate every showing around your schedule and walk you through every offer that comes in — price, terms, contingencies — so you know exactly what you're accepting.",
+    s5_title: "Inspection negotiations & closing",
+    s5_body: "We help you respond to inspection requests strategically and guide you through every document until the keys change hands.",
+    cta_text: "Curious what your home could sell for in today's market?",
+    cta_btn: "Get My Free Home Valuation",
+    footer: "Powered by One Raices"
+  },
+  es: {
+    back: "Atrás",
+    title: "Guía para Vendedores",
+    subtitle: "Cómo poner precio, preparar y vender tu casa por más dinero en menos tiempo.",
+    s1_title: "Obtén una estrategia de precio real",
+    s1_body: "Hacemos un análisis comparativo de mercado usando ventas recientes y realmente comparables en tu zona — no solo un estimado automático — para que tu casa tenga el precio correcto y se venda rápido y al mejor precio.",
+    s2_title: "Preparación que realmente vale la pena",
+    s2_body: "No toda renovación vale la pena. Te decimos qué arreglos rápidos (despejar espacios, una mano de pintura, mejorar la fachada) dan el mejor retorno, y cuáles mejoras puedes omitir.",
+    s3_title: "Fotos profesionales y marketing",
+    s3_body: "Tu propiedad recibe fotografía profesional, una descripción atractiva, y exposición en MLS, redes sociales y nuestra red de compradores desde el primer día.",
+    s4_title: "Visitas y ofertas",
+    s4_body: "Coordinamos cada visita según tu horario y te explicamos cada oferta que llega — precio, términos, contingencias — para que sepas exactamente qué estás aceptando.",
+    s5_title: "Negociación de inspección y cierre",
+    s5_body: "Te ayudamos a responder estratégicamente a las solicitudes de inspección y te guiamos en cada documento hasta la entrega de llaves.",
+    cta_text: "¿Tienes curiosidad de cuánto podría venderse tu casa en el mercado actual?",
+    cta_btn: "Obtener Mi Valuación Gratuita",
+    footer: "Desarrollado por One Raices"
+  }
+};
+initLang(PAGE_I18N);
+</script>
+
+</body>
+</html>

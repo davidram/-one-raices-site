@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Listings | One Raices</title>
+<meta name="description" content="Browse current home listings from One Raices.">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="topbar">
+    <a class="back-link" href="index.html">&larr; <span data-i18n="back">Back</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button class="lang-opt" id="lang-en" onclick="setLang('en')">EN</button>
+      <button class="lang-opt" id="lang-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <img class="logo-sm" src="logo.png" alt="One Raices logo">
+    <h1 data-i18n="title">Current Listings</h1>
+    <p data-i18n="subtitle">A few of the homes we're currently helping clients buy and sell. New listings added regularly.</p>
+  </div>
+
+  <div class="content">
+    <!--
+      EDIT ME: These are SAMPLE listings — replace the price, address,
+      beds/baths/sqft, and description for each card with your real listings.
+      To add a photo, replace the <div class="listing-img"> block with:
+        <img src="your-photo.jpg" style="width:100%;height:170px;object-fit:cover;">
+      To add more listings, copy a whole <div class="listing-card">...</div> block.
+    -->
+    <div class="listing-grid">
+
+      <div class="listing-card">
+        <div class="listing-img">
+          <div class="listing-badge" data-i18n="badge_new">NEW LISTING</div>
+          <svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">$425,000</div>
+          <div class="listing-addr">1842 Sunset Palm Drive, St. Petersburg, FL</div>
+          <div class="listing-meta">
+            <span data-i18n="beds3">🛏 3 beds</span>
+            <span data-i18n="baths2">🛁 2 baths</span>
+            <span>📐 1,850 sqft</span>
+          </div>
+          <div class="listing-cta">
+            <a class="ask" href="contact.html" data-i18n="ask_btn">Ask about this home</a>
+            <a class="wa" id="wa-1" data-wa-msg-key="waMsg1" href="https://wa.me/11234567890?text=Hi!%20I%27m%20interested%20in%20the%20home%20at%201842%20Sunset%20Palm%20Drive." target="_blank" rel="noopener" data-i18n="wa_btn">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="listing-card">
+        <div class="listing-img" style="background:linear-gradient(135deg,#52B788,#2d5c44);">
+          <div class="listing-badge" style="background:#1a1a2e;" data-i18n="badge_open">OPEN HOUSE SAT</div>
+          <svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">$589,900</div>
+          <div class="listing-addr">320 Bayshore Court, Tampa, FL</div>
+          <div class="listing-meta">
+            <span data-i18n="beds4">🛏 4 beds</span>
+            <span data-i18n="baths3">🛁 3 baths</span>
+            <span>📐 2,610 sqft</span>
+          </div>
+          <div class="listing-cta">
+            <a class="ask" href="contact.html" data-i18n="ask_btn">Ask about this home</a>
+            <a class="wa" id="wa-2" data-wa-msg-key="waMsg2" href="https://wa.me/11234567890?text=Hi!%20I%27m%20interested%20in%20the%20home%20at%20320%20Bayshore%20Court." target="_blank" rel="noopener" data-i18n="wa_btn">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="listing-card">
+        <div class="listing-img" style="background:linear-gradient(135deg,#D4845A,#7B3F00);">
+          <div class="listing-badge" style="background:#1a1a2e;" data-i18n="badge_reduced">PRICE REDUCED</div>
+          <svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>
+        </div>
+        <div class="listing-body">
+          <div class="listing-price">$312,500</div>
+          <div class="listing-addr">77 Magnolia Lane, Clearwater, FL</div>
+          <div class="listing-meta">
+            <span data-i18n="beds2">🛏 2 beds</span>
+            <span data-i18n="baths2">🛁 2 baths</span>
+            <span>📐 1,340 sqft</span>
+          </div>
+          <div class="listing-cta">
+            <a class="ask" href="contact.html" data-i18n="ask_btn">Ask about this home</a>
+            <a class="wa" id="wa-3" data-wa-msg-key="waMsg3" href="https://wa.me/11234567890?text=Hi!%20I%27m%20interested%20in%20the%20home%20at%2077%20Magnolia%20Lane." target="_blank" rel="noopener" data-i18n="wa_btn">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="listing-note" data-i18n="note">These are sample listings for demonstration. Contact us for the full, up-to-date inventory or to be notified the moment a new home hits the market.</p>
+
+    <a class="btn-primary" style="margin-top:18px;" href="contact.html" data-i18n="cta_btn">Get Notified of New Listings</a>
+  </div>
+
+  <div class="footer-note" data-i18n="footer">Powered by One Raices</div>
+</div>
+
+<script src="lang.js"></script>
+<script>
+const PAGE_I18N = {
+  en: {
+    back: "Back",
+    title: "Current Listings",
+    subtitle: "A few of the homes we're currently helping clients buy and sell. New listings added regularly.",
+    badge_new: "NEW LISTING", badge_open: "OPEN HOUSE SAT", badge_reduced: "PRICE REDUCED",
+    beds2: "🛏 2 beds", beds3: "🛏 3 beds", beds4: "🛏 4 beds",
+    baths2: "🛁 2 baths", baths3: "🛁 3 baths",
+    ask_btn: "Ask about this home",
+    wa_btn: "WhatsApp",
+    waMsg1: "Hi! I'm interested in the home at 1842 Sunset Palm Drive.",
+    waMsg2: "Hi! I'm interested in the home at 320 Bayshore Court.",
+    waMsg3: "Hi! I'm interested in the home at 77 Magnolia Lane.",
+    note: "These are sample listings for demonstration. Contact us for the full, up-to-date inventory or to be notified the moment a new home hits the market.",
+    cta_btn: "Get Notified of New Listings",
+    footer: "Powered by One Raices"
+  },
+  es: {
+    back: "Atrás",
+    title: "Propiedades Disponibles",
+    subtitle: "Algunas de las casas que estamos ayudando a comprar y vender. Nuevas propiedades agregadas regularmente.",
+    badge_new: "NUEVO", badge_open: "CASA ABIERTA SÁB", badge_reduced: "PRECIO REDUCIDO",
+    beds2: "🛏 2 recámaras", beds3: "🛏 3 recámaras", beds4: "🛏 4 recámaras",
+    baths2: "🛁 2 baños", baths3: "🛁 3 baños",
+    ask_btn: "Pregunta por esta casa",
+    wa_btn: "WhatsApp",
+    waMsg1: "¡Hola! Estoy interesado/a en la casa en 1842 Sunset Palm Drive.",
+    waMsg2: "¡Hola! Estoy interesado/a en la casa en 320 Bayshore Court.",
+    waMsg3: "¡Hola! Estoy interesado/a en la casa en 77 Magnolia Lane.",
+    note: "Estas son propiedades de muestra. Contáctanos para ver el inventario completo y actualizado, o para recibir aviso al instante cuando salga una nueva propiedad al mercado.",
+    cta_btn: "Recibir Aviso de Nuevas Propiedades",
+    footer: "Desarrollado por One Raices"
+  }
+};
+initLang(PAGE_I18N);
+</script>
+
+</body>
+</html>

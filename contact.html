@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Free Consultation | One Raices</title>
+<meta name="description" content="Book a free real estate consultation with One Raices.">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="topbar">
+    <a class="back-link" href="index.html">&larr; <span data-i18n="back">Back</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button class="lang-opt" id="lang-en" onclick="setLang('en')">EN</button>
+      <button class="lang-opt" id="lang-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <img class="logo-sm" src="logo.png" alt="One Raices logo">
+    <h1 data-i18n="title">Book a Free Consultation</h1>
+    <p data-i18n="subtitle">Tell us a bit about what you're looking for and we'll reach out within 24 hours — no obligation, no pressure.</p>
+  </div>
+
+  <div class="content">
+    <div class="form-card">
+      <form id="contact-form" action="https://formspree.io/f/mdarlkze" method="POST">
+        <div class="form-group">
+          <label data-i18n="name_lbl">Full name</label>
+          <input type="text" id="f-name" name="name" required data-i18n-placeholder="name_ph" placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label data-i18n="phone_lbl">Phone number</label>
+          <input type="tel" id="f-phone" name="phone" required data-i18n-placeholder="phone_ph" placeholder="(727) 555-0100">
+        </div>
+        <div class="form-group">
+          <label data-i18n="email_lbl">Email</label>
+          <input type="email" id="f-email" name="email" required data-i18n-placeholder="email_ph" placeholder="jane@email.com">
+        </div>
+        <div class="form-group">
+          <label data-i18n="interest_lbl">I'm interested in...</label>
+          <select id="f-interest" name="interest">
+            <option value="buying" data-i18n="opt_buying">Buying a home</option>
+            <option value="selling" data-i18n="opt_selling">Selling a home</option>
+            <option value="renting" data-i18n="opt_renting">Renting</option>
+            <option value="value" data-i18n="opt_value">Just curious about my home's value</option>
+            <option value="other" data-i18n="opt_other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="message_lbl">Message (optional)</label>
+          <textarea id="f-message" name="message" data-i18n-placeholder="message_ph" placeholder="Tell us a bit more..."></textarea>
+        </div>
+        <!-- Formspree config fields: friendly email subject + spam honeypot -->
+        <input type="hidden" name="_subject" value="New consultation request — One Raices">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn-primary" id="submit-btn" data-i18n="submit_btn">Request My Free Consultation</button>
+      </form>
+      <div class="form-error" id="form-error" style="display:none;background:#FDEDED;color:#B42318;padding:12px 14px;border-radius:10px;font-size:13px;margin-top:12px;text-align:center;"></div>
+      <div class="form-success" id="form-success" data-i18n="success_msg">Thanks! We've received your request and will reach out within 24 hours.</div>
+    </div>
+
+    <p style="text-align:center;font-size:12.5px;opacity:.6;margin-top:18px;" data-i18n="or_text">— or skip the form and message us directly —</p>
+
+    <!-- EDIT ME: replace 11234567890 with your real WhatsApp number -->
+    <a class="btn-primary btn-whatsapp" style="margin-top:10px;" id="wa-link" data-wa-msg-key="waMsg"
+       href="https://wa.me/11234567890?text=Hi!%20I%27d%20like%20to%20book%20a%20free%20consultation."
+       target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.5 4 3.78 7.72 3.78 12.27c0 1.6.47 3.16 1.36 4.49L4 21l4.4-1.15a8.8 8.8 0 0 0 3.65.83c4.55 0 8.27-3.72 8.27-8.27a8.85 8.85 0 0 0-2.72-6.09zM12.05 19.4a7.1 7.1 0 0 1-3.63-1l-.26-.16-2.6.68.7-2.54-.17-.27a7.1 7.1 0 0 1-1.1-3.85 7.13 7.13 0 0 1 7.13-7.13 7.07 7.07 0 0 1 5.04 2.1 7.07 7.07 0 0 1 2.08 5.04c0 3.94-3.2 7.13-7.13 7.13zm3.9-5.33c-.21-.1-1.24-.61-1.43-.68-.19-.07-.33-.1-.47.1-.14.21-.54.68-.66.82-.12.14-.24.15-.45.05-.21-.1-.87-.32-1.66-1.02-.61-.55-1.03-1.22-1.15-1.43-.12-.21-.01-.33.1-.43.1-.1.21-.24.32-.36.1-.12.14-.21.21-.35.07-.14.04-.26-.02-.36-.07-.1-.6-1.45-.83-1.99-.22-.53-.44-.45-.6-.46-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.71.31-.25.25-.94.92-.94 2.24 0 1.32.96 2.6 1.1 2.78.13.18 1.85 2.83 4.5 3.85 2.65 1.02 2.65.68 3.13.64.47-.04 1.53-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.07-.1-.21-.16-.42-.26z"/></svg>
+      <span data-i18n="wa_btn">WhatsApp us instead</span>
+    </a>
+  </div>
+
+  <div class="footer-note" data-i18n="footer">Powered by One Raices</div>
+</div>
+
+<script src="lang.js"></script>
+<script>
+const PAGE_I18N = {
+  en: {
+    back: "Back",
+    title: "Book a Free Consultation",
+    subtitle: "Tell us a bit about what you're looking for and we'll reach out within 24 hours — no obligation, no pressure.",
+    name_lbl: "Full name", name_ph: "Jane Smith",
+    phone_lbl: "Phone number", phone_ph: "(727) 555-0100",
+    email_lbl: "Email", email_ph: "jane@email.com",
+    interest_lbl: "I'm interested in...",
+    opt_buying: "Buying a home", opt_selling: "Selling a home", opt_renting: "Renting",
+    opt_value: "Just curious about my home's value", opt_other: "Something else",
+    message_lbl: "Message (optional)", message_ph: "Tell us a bit more...",
+    submit_btn: "Request My Free Consultation",
+    success_msg: "Thanks! We've received your request and will reach out within 24 hours.",
+    error_msg: "Something went wrong sending your request. Please try again, or message us on WhatsApp below.",
+    sending_btn: "Sending...",
+    or_text: "— or skip the form and message us directly —",
+    wa_btn: "WhatsApp us instead",
+    waMsg: "Hi! I'd like to book a free consultation.",
+    footer: "Powered by One Raices"
+  },
+  es: {
+    back: "Atrás",
+    title: "Reservar Consulta Gratuita",
+    subtitle: "Cuéntanos qué estás buscando y te contactaremos dentro de 24 horas — sin compromiso, sin presión.",
+    name_lbl: "Nombre completo", name_ph: "Juana Pérez",
+    phone_lbl: "Número de teléfono", phone_ph: "(727) 555-0100",
+    email_lbl: "Correo electrónico", email_ph: "juana@correo.com",
+    interest_lbl: "Estoy interesado/a en...",
+    opt_buying: "Comprar una casa", opt_selling: "Vender una casa", opt_renting: "Rentar",
+    opt_value: "Solo quiero saber el valor de mi casa", opt_other: "Otra cosa",
+    message_lbl: "Mensaje (opcional)", message_ph: "Cuéntanos un poco más...",
+    submit_btn: "Solicitar Mi Consulta Gratuita",
+    success_msg: "¡Gracias! Recibimos tu solicitud y te contactaremos dentro de 24 horas.",
+    error_msg: "Hubo un problema al enviar tu solicitud. Por favor intenta de nuevo, o escríbenos por WhatsApp abajo.",
+    sending_btn: "Enviando...",
+    or_text: "— o escríbenos directamente sin llenar el formulario —",
+    wa_btn: "Escríbenos por WhatsApp",
+    waMsg: "¡Hola! Quisiera reservar una consulta gratuita.",
+    footer: "Desarrollado por One Raices"
+  }
+};
+initLang(PAGE_I18N);
+
+/* ====================================================================
+  FORM SUBMISSION — sends data to Formspree via fetch() (AJAX), so the
+  visitor never leaves this page and sees your custom success/error UI
+  instead of being redirected to formspree.io.
+  Endpoint: https://formspree.io/f/mdarlkze
+==================================================================== */
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const formError = document.getElementById('form-error');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const lang = (document.documentElement.lang === 'es') ? 'es' : 'en';
+  formError.style.display = 'none';
+  submitBtn.disabled = true;
+  submitBtn.textContent = PAGE_I18N[lang].sending_btn;
+
+  const formData = new FormData(contactForm);
+
+  fetch(contactForm.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+    .then(response => {
+      if (response.ok) {
+        contactForm.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        return response.json().then(data => {
+          throw new Error(
+            (data.errors && data.errors.map(err => err.message).join(', ')) ||
+            'Submission failed'
+          );
+        });
+      }
+    })
+    .catch(() => {
+      formError.textContent = PAGE_I18N[lang].error_msg;
+      formError.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = PAGE_I18N[lang].submit_btn;
+    });
+});
+</script>
+
+</body>
+</html>
